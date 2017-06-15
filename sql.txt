@@ -1,0 +1,39 @@
+CREATE SCHEMA `crew` ;
+
+CREATE TABLE `crew`.`admin` (
+  `Username` VARCHAR(45) NOT NULL,
+  `Password` VARCHAR(45) NULL,
+  PRIMARY KEY (`Username`));
+
+
+INSERT INTO `crew`.`admin` (`Username`, `Password`) VALUES ('IBM@gmail.com', '1234');
+
+
+CREATE TABLE `crew`.`crewd` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(45) NULL,
+  `email` VARCHAR(45) NULL,
+  `dob` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  `contact` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+
+
+CREATE TABLE `crew`.`recruit` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `email` VARCHAR(45) NULL,
+  `dob` VARCHAR(45) NULL,
+  `qualification` VARCHAR(45) NULL,
+  `contact` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `crew`.`trainer` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `email` VARCHAR(45) NULL,
+  `status` INT NULL,
+  `timimgs` VARCHAR(45) NULL,
+  `password` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
