@@ -37,3 +37,33 @@ CREATE TABLE `crew`.`trainer` (
   `timimgs` VARCHAR(45) NULL,
   `password` VARCHAR(45) NULL,
   PRIMARY KEY (`id`));
+
+
+ALTER TABLE `crew`.`crewd` 
+ADD COLUMN `Flag` VARCHAR(45) BINARY NULL AFTER `contact`,
+ADD COLUMN `Training` VARCHAR(45) NULL AFTER `Flag`;
+
+
+CREATE TABLE `crew`.`training` (
+  `Id` INT NOT NULL AUTO_INCREMENT,
+  `training_name` VARCHAR(45) NULL,
+  `trainer` VARCHAR(45) NULL,
+  `Sdate` VARCHAR(45) NULL,
+  `Edate` VARCHAR(45) NULL,
+  PRIMARY KEY (`Id`));
+
+
+CREATE TABLE `crew`.`comp_training` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `training` VARCHAR(45) NULL,
+  `crew` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`));
+
+
+
+ALTER TABLE `crew`.`comp_training` 
+DROP COLUMN `id`,
+CHANGE COLUMN `crew` `crew` VARCHAR(45) NOT NULL FIRST,
+CHANGE COLUMN `training` `training` VARCHAR(45) NOT NULL ,
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (`crew`, `training`);

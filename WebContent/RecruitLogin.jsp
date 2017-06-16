@@ -10,10 +10,13 @@ function addcrew()
 {
     window.location="CrewRegister.jsp";
 }
-
 function deletecrew() 
 {
     window.location="CrewDelete.jsp";
+}
+function displaycrew() 
+{
+    window.location="RecruitShow.jsp";
 }
 </script>
 </head>
@@ -22,6 +25,7 @@ function deletecrew()
 <h1>Welcome HR Recruit</h1>
 <button type="button" onclick="addcrew()">ADD CREW MEMBER</button>
 <button type="button" onclick="deletecrew()">DELETE CREW MEMBER</button>
+<button type="button" onclick="displaycrew()">DISPLAY CREW MEMBER</button>
 </center>
 </body>
 </html>

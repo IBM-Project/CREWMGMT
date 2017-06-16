@@ -10,6 +10,7 @@ import com.admin.user.Model.AdminModel;
 import com.admin.user.Model.CrewModel;
 import com.admin.user.Model.RecruitModel;
 import com.admin.user.Model.TrainModel;
+import com.admin.user.Model.TrainingModel;
 
 public class IBMDAO {
 
@@ -88,7 +89,7 @@ public class IBMDAO {
 	{  
 		try{
 		PreparedStatement ps=con.prepareStatement(query);
-			ps.setString(1, obj1.getName());
+			ps.setString(1, obj1.getEmail());
 			ps.setString(2, obj1.getPassword());
 
 			ResultSet rs=ps.executeQuery();
@@ -116,7 +117,7 @@ public class IBMDAO {
 	{  
 		try{
 		PreparedStatement ps=con.prepareStatement(query);
-			ps.setString(1, obj1.getName());
+			ps.setString(1, obj1.getEmail());
 			ps.setString(2, obj1.getPassword());
 
 			ResultSet rs=ps.executeQuery();
@@ -146,7 +147,7 @@ public class IBMDAO {
 		try{
 		PreparedStatement ps=con.prepareStatement(query);
 			//get functions changed as crewmodel changed
-			ps.setString(1, obj1.getUname());
+			ps.setString(1, obj1.getEmail());
 			ps.setString(2, obj1.getPwd());
 
 			ResultSet rs=ps.executeQuery();
@@ -377,6 +378,71 @@ public ResultSet Featchdetails(String sql)
 	
 	return rs;
 }
+
+
+
+	
+
+//TARAINING register
+public String insertTraining(TrainingModel t1, String query)
+{	
+	try{
+	PreparedStatement ps=con.prepareStatement(query);
+	ps.setString(1, t1.getTrainingname());
+	ps.setString(2, t1.getTrainer());
+	ps.setString(3, t1.getStartdate());
+	ps.setString(4, t1.getEnddate());
+	
+	
+	int i = ps.executeUpdate();
+	
+	if(i==1)
+	{
+		return "success";
+		
+	}
+	
+	else
+	{
+		return "failure";
+	}
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}	
+	
+	return "";
+	
+
+}
+
+
+public ResultSet Fetchdetails5(String sql,String crew )
+{
+	try{
+	PreparedStatement ps= con.prepareStatement(sql);
+	ps.setString(1,crew);
+	
+	rs=ps.executeQuery();
+	
+	
+	
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+		
+	}
+	
+	
+	
+	
+	return rs;
+}
+
+
+
 
 
 }

@@ -6,21 +6,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <script>
-function addtrain() 
-{
-    window.location="xyz.jsp";
-}
-
-function viewtrain() 
-{
-    window.location="ViewTrain.jsp";
-}
+  setTimeout(function() {
+      document.location = "TrainerLogin.jsp";
+  }, 2500); // <-- this is the delay in milliseconds
 </script>
-</head>
 <body>
-<h1>Successfully Logged In To Crew Page</h1>
-<button type="button" onclick="addtrain()">Enroll For Training</button>
-<button type="button" onclick="viewtrain()">View Done Training</button>
-<h1>Welcome</h1>
+<h1>Training Added Successfully. Redirecting To Trainer Page Shortly ...</h1>
+
 </body>
 </html>

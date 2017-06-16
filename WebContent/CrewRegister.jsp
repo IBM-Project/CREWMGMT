@@ -5,6 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Crew Register</title>
+<script>
+function back() 
+{
+    window.location="Home.html";
+}
+</script>
 </head>
 <body>
 <center>
@@ -34,6 +40,7 @@
               <tr>
                 <td>&nbsp;</td>
                 <td><input type="submit" value="Register" /></td>
+                <td><button type="button" onclick="back()">BACK</button></td>
               </tr>
             </table>
 			</form>

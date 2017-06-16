@@ -90,10 +90,10 @@ public class Servlet_home extends HttpServlet {
          {
         	 
       		 RecruitModel obj = new RecruitModel();
-      		 obj.setName(name);
+      		 obj.setEmail(name);
       		 obj.setPassword(password);
       		 
-      		 String sql="Select * from recruit where name=? and password =?";
+      		 String sql="Select * from recruit where email=? and password =?";
       		 
       		 IBMDAO obj1 = new IBMDAO();
       		 
@@ -124,10 +124,10 @@ public class Servlet_home extends HttpServlet {
          {
         	 
       		 TrainModel obj = new TrainModel();
-      		 obj.setName(name);
+      		 obj.setEmail(name);
       		 obj.setPassword(password);
       		 
-      		 String sql="Select * from trainer where name=? and password =?";
+      		 String sql="Select * from trainer where email=? and password =?";
       		 
       		 IBMDAO obj1 = new IBMDAO();
       		 
@@ -158,11 +158,11 @@ public class Servlet_home extends HttpServlet {
     {
    	 
 		 CrewModel obj = new CrewModel();
-		 obj.setUname(name);
+		 obj.setEmail(name);
 		 obj.setPwd(password);
 		 
 		 //table name changed
-		 String sql="Select * from crewd where username=? and password =?";
+		 String sql="Select * from crewd where email=? and password =?";
 		 
 		 IBMDAO obj1 = new IBMDAO();
 		 
