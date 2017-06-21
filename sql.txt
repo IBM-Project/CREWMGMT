@@ -81,3 +81,5 @@ ADD COLUMN `photo` VARCHAR(45) NULL DEFAULT NULL AFTER `Training`;
 ALTER TABLE `crew`.`recruit` 
 ADD COLUMN `photo` VARCHAR(45) NULL DEFAULT NULL AFTER `password`;
 
+ALTER TABLE `crew`.`trainer` 
+ADD COLUMN `photo` VARCHAR(45) NULL DEFAULT NULL AFTER `password`;

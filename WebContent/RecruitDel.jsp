@@ -18,20 +18,45 @@ response.sendRedirect("Home.jsp");
 
 
 %>
+<%
+ String sql="select * from recruit";
+ IBMDAO obj=new IBMDAO();
+ ResultSet rs=obj.Featchdetails(sql);
+%>
 <center>
-<h1>HR Recruit Deletion</h1>
-		<form method="post" action="RecruitDelServelet" >
-			<table border="0">
-              <tr>
-                <td>E-Mail</td>
-                <td><input type="text" name="email"  /></td>
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td><input type="submit" value="Delete" /></td>
-              </tr>
-            </table>
-			</form>
+<h1>USER DETAILS</h1>
+<form action="RecruitDelServelet" method="post">
+<table border="1">
+  <tr>
+     <th>  </th>
+     <th>ID</th>
+     <th>USERNAME</th>
+     <th>EMAIL</th>
+     <th>DOB</th>
+     <th>Qualification</th>
+     <th>CONTACT</th>
+     <th>PASSWORD</th>
+     </tr>
+  <% int j=0; while(rs.next()){ %>
+    <tr>
+        <td><input type="checkbox" name="rid" value="<%=rs.getString(1)%>" /> </td>
+        <td><%=++j %></td>
+        <td><%=rs.getString(2) %></td>
+        <td><%=rs.getString(3) %></td>
+        <td><%=rs.getString(4) %></td>
+        <td><%=rs.getString(5) %></td>
+        <td><%=rs.getString(6) %></td>
+        <td><%=rs.getString(7) %></td>
+    </tr>
+  <%} %>
+  
+ </table>
+ <input type="submit" value="Delete" />
+ </form>
+<br>
+<br>
+<a href="Logout.jsp">Click Here To Logout</a>
+
 </center>
 </body>
 </html>

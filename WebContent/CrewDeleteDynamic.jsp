@@ -38,10 +38,10 @@ response.sendRedirect("Home.jsp");
      <th>PASSWORD</th>
      <th>CONTACT</th>
   </tr>
-  <%  while(rs.next()){ %>
+  <% int j=0; while(rs.next()){ %>
     <tr>
         <td><input type="checkbox" name="rid" value="<%=rs.getString(1)%>" /> </td>
-        <td><%=rs.getString(1) %></td>
+        <td><%=++j  %></td>
         <td><%=rs.getString(2) %></td>
         <td><%=rs.getString(3) %></td>
         <td><%=rs.getString(4) %></td>

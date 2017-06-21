@@ -39,7 +39,7 @@ function myFunction5()
 
 function myFunction6() 
 {
-    window.location="CrewDelete.jsp";
+    window.location="CrewDeleteDynamic.jsp";
 	
 }
 

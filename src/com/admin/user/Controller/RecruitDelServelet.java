@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.admin.user.Dao.IBMDAO;
 import com.admin.user.Model.RecruitModel;
 
-/**
- * Servlet implementation class RecruitDelServelet
- */
+
 @WebServlet("/RecruitDelServelet")
 public class RecruitDelServelet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -37,24 +35,16 @@ public class RecruitDelServelet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String email = request.getParameter("email");
-		
-		RecruitModel obj = new RecruitModel();
-		obj.setEmail(email);
-		
-		
-		String sql = "delete from recruit where email= ?";
-		
-		IBMDAO obj1 = new IBMDAO();
-		String msg = obj1.DeleteUser2(obj, sql);
-		if(msg.equals("success"))
-		{
-			response.sendRedirect("SuccessDel.jsp");
-		}
-		else
-		{
-			response.sendRedirect("RecruitDel.jsp?error=SORRY COULD NOT DELETE");
-		}
+		  IBMDAO obj=new IBMDAO();
+		  String msg=null;
+		  String [] id=request.getParameterValues("rid");
+		  for(int i=0;i<id.length;i++)
+		  {
+			  String sql="delete from recruit where id=?";
+			  msg=obj.DeleteRecruitByID(sql, id[i]);
+			  System.out.println(id[i]+" "+msg);
+		  }
+		response.sendRedirect("RecruitDel.jsp");
 	}
 
 }

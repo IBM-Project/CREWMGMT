@@ -7,7 +7,14 @@ public class CrewModel {
 	String email;
 	String dob;
 	String contact;
+	String pic;
 	
+	public String getPic() {
+		return pic;
+	}
+	public void setPic(String pic) {
+		this.pic = pic;
+	}
 	public String getUname() {
 		return uname;
 	}

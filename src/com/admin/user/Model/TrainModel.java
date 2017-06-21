@@ -2,11 +2,20 @@ package com.admin.user.Model;
 
 public class TrainModel {
 
-	private String name ;
+	 private String name ;
 	 private String email;
 	 private String password;
 	 private String status;
 	 private String timings;
+	 private String pic;
+		
+		public String getPic() {
+			return pic;
+		}
+		public void setPic(String pic) {
+			this.pic = pic;
+		}
+
 	public String getName() {
 		return name;
 	}
