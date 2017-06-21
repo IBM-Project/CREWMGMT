@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <script>
   setTimeout(function() {
-      document.location = "Admin.html";
+      document.location = "Admin.jsp";
   }, 2500); // <-- this is the delay in milliseconds
 </script>
 

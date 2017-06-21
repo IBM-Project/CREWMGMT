@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import="com.admin.user.Dao.*" %>    
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,6 +66,15 @@ function myFunction9()
 </head>
 
 <body>
+<%
+if(session.getAttribute("usersession")==null)
+{
+
+response.sendRedirect("Home.jsp");
+}
+
+
+%>
 <Center>
 <h1>ADMIN MENU</h1>
 <table>
@@ -87,7 +100,7 @@ function myFunction9()
 <CENTER>
 <pre>
 
-<a href="Home.html">CLICK HERE TO GO BACK</a>
+<a href="Home.jsp">CLICK HERE TO GO BACK</a>
 </pre>
 </CENTER>
 

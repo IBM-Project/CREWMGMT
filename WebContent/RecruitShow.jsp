@@ -9,6 +9,15 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+if(session.getAttribute("usersession")==null) 
+{
+
+response.sendRedirect("Home.jsp");
+}
+
+
+%>
 <center>
 <h1>HR Recruits</h1>
 <%
@@ -44,7 +53,7 @@
 <CENTER>
 <pre>
 
-<a href="Admin.html">CLICK HERE TO GO BACK</a>
+<a href="Admin.jsp">CLICK HERE TO GO BACK</a>
 </pre>
 </CENTER>
 

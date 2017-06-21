@@ -6,9 +6,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Crew</title>
 </head>
 <body>
+<%
+if(session.getAttribute("usersession")==null && session.getAttribute("recruitsession")==null ) 
+{
+
+response.sendRedirect("Home.jsp");
+}
+
+
+%>
 <center>
 <h1>CREW MEMBERS</h1>
 <%
@@ -43,7 +52,7 @@
 <CENTER>
 <pre>
 
-<a href="Admin.html">CLICK HERE TO GO BACK</a>
+<a href="Admin.jsp">CLICK HERE TO GO BACK</a>
 </pre>
 </CENTER>
 

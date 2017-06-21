@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import="com.admin.user.Dao.*" %>    
+<%@ page import="java.sql.*" %>
+
 <!doctype html>
 <html>
 <head>
@@ -6,6 +11,23 @@
 </head>
 
 <body>
+<%
+if(session.getAttribute("usersession")!=null || session.getAttribute("recruitsession")!=null || session.getAttribute("trainersession")!=null || session.getAttribute("crewsession")!=null)
+{
+       session.removeAttribute("usersession");
+       session.removeAttribute("recruitsession");
+       session.removeAttribute("crewsession");
+       session.removeAttribute("trainersession");
+ 	   
+       
+       session.invalidate();
+	   response.sendRedirect("Home.jsp");
+
+}
+
+%>
+
+
 <center>
 <h1>Crew Management</h1>
 <form method="post" action="Servlet_home">

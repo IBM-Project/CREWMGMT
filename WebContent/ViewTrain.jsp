@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>View Training</title>
 </head>
 <table width="200" border="1">
   <body>

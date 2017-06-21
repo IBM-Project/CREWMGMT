@@ -67,3 +67,13 @@ CHANGE COLUMN `crew` `crew` VARCHAR(45) NOT NULL FIRST,
 CHANGE COLUMN `training` `training` VARCHAR(45) NOT NULL ,
 DROP PRIMARY KEY,
 ADD PRIMARY KEY (`crew`, `training`);
+
+INSERT INTO `crew`.`comp_training` (`crew`, `training`) VALUES ('Pulkit', 'abc');
+INSERT INTO `crew`.`comp_training` (`crew`, `training`) VALUES ('Pulkit', 'pQR');
+INSERT INTO `crew`.`comp_training` (`crew`, `training`) VALUES ('himanshu', 'ac');
+INSERT INTO `crew`.`comp_training` (`crew`, `training`) VALUES ('natsha', 'aai');
+
+
+
+ALTER TABLE `crew`.`crewd` 
+ADD COLUMN `photo` VARCHAR(45) NULL DEFAULT NULL AFTER `Training`;

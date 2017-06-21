@@ -49,7 +49,7 @@ public class CrewDelServlet extends HttpServlet {
 		IBMDAO obj1 = new IBMDAO();
 		String msg = obj1.DeleteUser1(obj, sql);
 		if(msg.equals("success"))
-		{
+		{   
 			response.sendRedirect("SuccessDel.jsp");
 		}
 		else

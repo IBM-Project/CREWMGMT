@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.admin.user.Dao.IBMDAO;
 import com.admin.user.Model.AdminModel;
@@ -62,15 +63,18 @@ public class Servlet_home extends HttpServlet {
     		 
     		 if(msg.equals("success"))
     		 {
+    			 
+    			 HttpSession session=request.getSession();
+    			 session.setAttribute("usersession",name);
     			 System.out.println("success");
-    			 response.sendRedirect("Admin.html");
+    			 response.sendRedirect("Admin.jsp");
     		 }
     		 
     		 else
     		 {
     			 System.out.println("failure");
     			//value should be home here
-    			 response.sendRedirect("Home.html?error=INVALID USERNAME AND PASSWORD");
+    			 response.sendRedirect("Home.jsp?error=INVALID USERNAME AND PASSWORD");
     		 }
     		 	
     		 
@@ -101,7 +105,10 @@ public class Servlet_home extends HttpServlet {
       		String msg=obj1.ValidateRecruit(obj,sql);
       		 
       		 if(msg.equals("success"))
-      		 {
+      		 {  
+      			HttpSession session=request.getSession();
+   			    session.setAttribute("recruitsession",name);
+      			 
       			 System.out.println("success");
       			 response.sendRedirect("RecruitLogin.jsp");
       		 }
@@ -110,7 +117,7 @@ public class Servlet_home extends HttpServlet {
       		 {
       			 System.out.println("failure");
       			//value should be home here
-      			 response.sendRedirect("Home.html?error=INVALID USERNAME AND PASSWORD");
+      			 response.sendRedirect("Home.jsp?error=INVALID USERNAME AND PASSWORD");
       		 }
       		 	
       		 
@@ -135,7 +142,10 @@ public class Servlet_home extends HttpServlet {
       		String msg=obj1.ValidateTrainer(obj,sql);
       		 
       		 if(msg.equals("success"))
-      		 {
+      		 {   
+      			 
+      			HttpSession session=request.getSession();
+			    session.setAttribute("trainersession",name);
       			 System.out.println("success");
       			 response.sendRedirect("TrainerLogin.jsp");
       		 }
@@ -144,7 +154,7 @@ public class Servlet_home extends HttpServlet {
       		 {
       			 System.out.println("failure");
       			//value should be home here
-      			 response.sendRedirect("Home.html?error=INVALID USERNAME AND PASSWORD");
+      			 response.sendRedirect("Home.jsp?error=INVALID USERNAME AND PASSWORD");
       		 }
       		 	
       		 
@@ -171,6 +181,8 @@ public class Servlet_home extends HttpServlet {
 		 
 		 if(msg.equals("success"))
 		 {
+			 HttpSession session=request.getSession();
+			 session.setAttribute("crewsession",name);
 			 System.out.println("success");
 			 response.sendRedirect("Crew.jsp");
 		 }
@@ -179,7 +191,7 @@ public class Servlet_home extends HttpServlet {
 		 {
 			 System.out.println("failure");
 			 //value should be home here
-			 response.sendRedirect("Home.html?error=INVALID USERNAME AND PASSWORD");
+			 response.sendRedirect("Home.jsp?error=INVALID USERNAME AND PASSWORD");
 		 }
 		 	
 		 
