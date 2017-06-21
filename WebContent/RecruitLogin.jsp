@@ -14,11 +14,11 @@ function addcrew()
 }
 function deletecrew() 
 {
-    window.location="CrewDelete.jsp";
+    window.location="CrewDeleteMenu.jsp";
 }
 function displaycrew() 
 {
-    window.location="RecruitShow.jsp";
+    window.location="CrewShow.jsp";
 }
 </script>
 </head>
@@ -33,10 +33,14 @@ response.sendRedirect("Home.jsp");
 
 %>
 <center>
-<h1>Welcome HR Recruit</h1>
+<h1>Welcome</h1>
+<h2><%=session.getAttribute("recruitsession") %></h2>
 <button type="button" onclick="addcrew()">ADD CREW MEMBER</button>
 <button type="button" onclick="deletecrew()">DELETE CREW MEMBER</button>
 <button type="button" onclick="displaycrew()">DISPLAY CREW MEMBER</button>
+<br>
+<br>
+<a href="Logout.jsp">Click Here To Logout</a>
 </center>
 </body>
 </html>

@@ -50,12 +50,19 @@ response.sendRedirect("Home.jsp");
                 <td><input type="text" name="contact"  /></td>
               </tr>
               <tr>
+				<td>Choose Image:</td>
+				<td><input type="file" name="photo" /></td>
+			</tr>
+              <tr>
                 <td>&nbsp;</td>
                 <td><input type="submit" value="Register" /></td>
                 <td><button type="button" onclick="back()">BACK</button></td>
               </tr>
             </table>
 			</form>
+<br>
+<br>
+<a href="Logout.jsp">Click Here To Logout</a>
 </center>
 </body>
 </html>

@@ -55,7 +55,9 @@ response.sendRedirect("Home.jsp");
 <a href="Admin.jsp">CLICK HERE TO GO BACK</a>
 </pre>
 </CENTER>
-
+<br>
+<br>
+<a href="Logout.jsp">Click Here To Logout</a>
 </center>
 </body>
 </html>

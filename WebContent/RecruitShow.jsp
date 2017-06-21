@@ -10,7 +10,7 @@
 </head>
 <body>
 <%
-if(session.getAttribute("usersession")==null) 
+if(session.getAttribute("usersession")==null && session.getAttribute("recruitsession")==null) 
 {
 
 response.sendRedirect("Home.jsp");

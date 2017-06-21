@@ -77,3 +77,7 @@ INSERT INTO `crew`.`comp_training` (`crew`, `training`) VALUES ('natsha', 'aai')
 
 ALTER TABLE `crew`.`crewd` 
 ADD COLUMN `photo` VARCHAR(45) NULL DEFAULT NULL AFTER `Training`;
+
+ALTER TABLE `crew`.`recruit` 
+ADD COLUMN `photo` VARCHAR(45) NULL DEFAULT NULL AFTER `password`;
+
