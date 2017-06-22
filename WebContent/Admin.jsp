@@ -33,7 +33,7 @@ function myFunction4()
 
 function myFunction5() 
 {
-    window.location="TrainerDel.jsp";
+    window.location="TrainerMenu.jsp";
 	
 }
 

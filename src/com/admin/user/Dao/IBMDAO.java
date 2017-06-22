@@ -21,7 +21,7 @@ public class IBMDAO {
 	public static String drivername="com.mysql.jdbc.Driver"; //com.ibm.db2.jcc.DB2Driver
 	public static String url="jdbc:mysql://localhost:3306/crew";
 	public static String username="root";
-	public static String pas1="2358"; //password changed
+	public static String pas1="natasha"; //password changed
 	static Connection con=null;
 	public ResultSet rs=null;
 	
@@ -471,6 +471,32 @@ public String DeleteCrewByID(String sql,String id)
 
 
 public String DeleteRecruitByID(String sql,String id)
+{
+	try{
+	PreparedStatement ps=con.prepareStatement(sql);
+	ps.setString(1,id);
+	int i=ps.executeUpdate();
+	
+	if(i==1)
+	{
+		return "success";
+	}
+	else
+	{
+		return"failure";
+		
+	}
+		
+		
+		
+	}catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+	
+	return "";
+}
+public String DeleteTrainerByID(String sql,String id)
 {
 	try{
 	PreparedStatement ps=con.prepareStatement(sql);
