@@ -522,6 +522,7 @@ public String DeleteTrainerByID(String sql,String id)
 	
 	return "";
 }
+<<<<<<< HEAD
 
 public String UpdateTrainer(TrainModel obj,String sql,String email){
 	
@@ -554,6 +555,8 @@ public String UpdateTrainer(TrainModel obj,String sql,String email){
 	
 	return "";
 }
+=======
+>>>>>>> ec4dcf0ecc4d288fb863ab3250e9a942bf4de27e
 
 
 }
