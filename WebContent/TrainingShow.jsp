@@ -41,7 +41,7 @@
 <CENTER>
 <pre>
 
-<a href="TrainerLogin.jsp">CLICK HERE TO GO BACK</a>
+<a href="Admin.jsp">CLICK HERE TO GO BACK</a>
 </pre>
 </CENTER>
 
