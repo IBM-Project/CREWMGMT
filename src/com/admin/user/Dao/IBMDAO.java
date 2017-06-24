@@ -555,6 +555,7 @@ public String UpdateTrainer(TrainModel obj,String sql,String email){
 	return "";
 }
 
+<<<<<<< HEAD
 public String UpdateCrew(CrewModel obj,String sql,String email){
 	
 	
@@ -588,6 +589,8 @@ public String UpdateCrew(CrewModel obj,String sql,String email){
 	return "";
 }
 
+=======
+>>>>>>> 2d957caa5cce8fefa0b47ca5344149487c3dacbd
 
 }
 	

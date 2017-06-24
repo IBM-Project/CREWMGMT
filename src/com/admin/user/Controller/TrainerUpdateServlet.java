@@ -29,6 +29,10 @@ public class TrainerUpdateServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
+=======
+		String id=request.getParameter("id");
+>>>>>>> 2d957caa5cce8fefa0b47ca5344149487c3dacbd
 		String name=request.getParameter("name");
 	    String email=request.getParameter("email");
 	    String status=request.getParameter("status");
