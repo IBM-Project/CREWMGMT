@@ -24,7 +24,7 @@ response.sendRedirect("Home.jsp");
 	String sql="select * from crewd";
 	IBMDAO obj=new IBMDAO();
 	ResultSet rs=obj.Featchdetails(sql);
-
+	String savePath = getServletContext().getRealPath("/")+"images\\";
 %>
 
 <table>
@@ -35,6 +35,9 @@ response.sendRedirect("Home.jsp");
             <th>DOB</th>
             <th>PASSWORD</th>
             <th>CONTACT</th>
+            <th>FLAG</th>
+            <th>TRAINING</th>
+            <%-- <th>PROFILE PIC</th> --%>
         
         </tr>
         <% while(rs.next()){ %>
@@ -45,6 +48,10 @@ response.sendRedirect("Home.jsp");
                    <td><%=rs.getString(4) %></td>
                    <td><%=rs.getString(5) %></td>
                    <td><%=rs.getString(6) %></td>
+                   <td><%=rs.getString(7) %></td>
+                   <td><%=rs.getString(8) %></td>
+                   <%-- <td><img src="<%=savePath+rs.getString(9) %>" alt="profilepic" width="50" height="50"></td> --%>
+                   
                    
                  </tr>
          <%}%>

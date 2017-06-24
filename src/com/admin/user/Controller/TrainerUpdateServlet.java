@@ -30,9 +30,9 @@ public class TrainerUpdateServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String name=request.getParameter("name");
-	    	String email=request.getParameter("email");
-	    	String status=request.getParameter("status");
-	    	String timings=request.getParameter("timings");
+	    String email=request.getParameter("email");
+	    String status=request.getParameter("status");
+	    String timings=request.getParameter("timings");
 		String password=request.getParameter("pwd");
 		
 		TrainModel obj=new TrainModel();

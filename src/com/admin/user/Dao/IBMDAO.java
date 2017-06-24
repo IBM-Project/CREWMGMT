@@ -184,6 +184,7 @@ public class IBMDAO {
 		ps.setString(3, m1.getDob());
 		ps.setString(4, m1.getPwd());
 		ps.setString(5, m1.getContact());
+		ps.setString(6, m1.getPic());
 		
 		int i = ps.executeUpdate();
 		
@@ -587,6 +588,7 @@ public String UpdateCrew(CrewModel obj,String sql,String email){
 	
 	return "";
 }
+
 
 }
 	

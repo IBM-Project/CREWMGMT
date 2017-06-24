@@ -27,7 +27,7 @@ response.sendRedirect("Home.jsp");
 
 <center>
 <h1>Crew Register</h1>
-		<form method="post" action="CrewRegServelet" >
+		<form method="post" action="CrewRegServelet" enctype="multipart/form-data">
 			<table border="0">
               <tr>
                 <td>Username</td>
