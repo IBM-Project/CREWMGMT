@@ -27,7 +27,7 @@ response.sendRedirect("Home.jsp");
 %>
 <center>
 <h1>HR REGISTER</h1>
-		<form method="post" action="CrewRecruitServlet" >
+		<form method="post" action="CrewRecruitServlet" enctype="multipart/form-data">
 			<table border="0">
               <tr>
                 <td>NAME</td>
@@ -53,6 +53,10 @@ response.sendRedirect("Home.jsp");
                 <td>CONTACT NUMBER</td>
                 <td><input type="text" name="contact"  /></td>
               </tr>
+               <tr>
+				<td>Choose Image:</td>
+				<td><input type="file" name="photo" /></td>
+			</tr>
               <tr>
                
                 <td><input type="submit" value="Register" /></td>

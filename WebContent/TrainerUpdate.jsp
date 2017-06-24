@@ -10,6 +10,13 @@
 </head>
 <body>
 <%
+if(session.getAttribute("usersession")==null) 
+{
+
+response.sendRedirect("Home.jsp");
+}
+%>
+<%
  String sql="select * from trainer";
  IBMDAO obj=new IBMDAO();
  ResultSet rs=obj.Featchdetails(sql);

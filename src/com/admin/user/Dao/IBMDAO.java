@@ -21,7 +21,7 @@ public class IBMDAO {
 	public static String drivername="com.mysql.jdbc.Driver"; //com.ibm.db2.jcc.DB2Driver
 	public static String url="jdbc:mysql://localhost:3306/crew";
 	public static String username="root";
-	public static String pas1="vpkhb"; //password changed
+	public static String pas1="natasha"; //password changed
 	static Connection con=null;
 	public ResultSet rs=null;
 	
@@ -219,6 +219,7 @@ public class IBMDAO {
 		ps.setString(4, r1.getQualification());
 		ps.setString(5, r1.getContact());
 		ps.setString(6, r1.getPassword());
+		ps.setString(7, r1.getPic());
 		
 		int i = ps.executeUpdate();
 		

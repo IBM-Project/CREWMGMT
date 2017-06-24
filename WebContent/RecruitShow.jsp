@@ -47,6 +47,7 @@ response.sendRedirect("Home.jsp");
                    <td><%=rs.getString(5) %></td>
                    <td><%=rs.getString(6) %></td>
                    <td><%=rs.getString(7) %></td>
+                   
                  </tr>
          <%}%>
 </table>

@@ -10,6 +10,13 @@
 </head>
 <body>
 <%
+if(session.getAttribute("usersession")==null) 
+{
+
+response.sendRedirect("Home.jsp");
+}
+%>
+<%
  String sql="select * from trainer";
  IBMDAO obj=new IBMDAO();
  ResultSet rs=obj.Featchdetails(sql);
@@ -37,27 +44,38 @@ if(request.getParameter("rid")!=null)
 
 %>
 
-<table>
-        <tr>
-            <th>ID</th>
-            <th>NAME</th>
-            <th>EMAIL</th>
-            <th>STATUS</th>
-            <th>TIMINGS</th>
-            <th>PASSWORD</th>
+
         
-        </tr>
         <% while(rs1.next()){ %>
+        <table border=1px solidblack;>
                 <tr>
+                <td><b>ID</b><td>
                    <td><%=rs1.getString(1) %></td>
+                   </tr>
+                   <tr>
+                <td><b>NAME</b><td>
                    <td><%=rs1.getString(2) %></td>
+                   </tr>
+                   <tr>
+                <td><b>EMAIL</b><td>
                    <td><%=rs1.getString(3) %></td>
+                   </tr>
+                   <tr>
+                <td><b>STATUS</b><td>
                    <td><%=rs1.getString(4) %></td>
+                   </tr>
+                   <tr>
+                <td><b>TIMIMNGS</b><td>
                    <td><%=rs1.getString(5) %></td>
+                   </tr>
+                   <tr>
+                <td><b>PASSWORD</b><td>
                    <td><%=rs1.getString(6) %></td>
-                 </tr>
+                   </tr>
+                  </table>
+          
          <%} }%>
-</table>
+
 
 
 </center>
