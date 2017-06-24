@@ -8,16 +8,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.admin.user.Dao.IBMDAO;
+import com.admin.user.Model.CrewModel;
 
-
-@WebServlet("/RecruitDelServelet")
-public class RecruitDelServelet extends HttpServlet {
+/**
+ * Servlet implementation class CrewUpdateServlet
+ */
+@WebServlet("/CrewUpdateServlet")
+public class CrewUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RecruitDelServelet() {
+    public CrewUpdateServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,17 +36,31 @@ public class RecruitDelServelet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String name=request.getParameter("name");
+	    String email=request.getParameter("email");
+	    String dob=request.getParameter("dob");
+	    String password=request.getParameter("password");
+		String contact=request.getParameter("contact");
 		
-		  IBMDAO obj=new IBMDAO();
-		  String msg=null;
-		  String [] id=request.getParameterValues("rid");
-		  for(int i=0;i<id.length;i++)
-		  {
-			  String sql="delete from recruit where id=?";
-			  msg=obj.DeleteRecruitByID(sql, id[i]);
-			  System.out.println(id[i]+" "+msg);
-		  }
-		response.sendRedirect("RecruitDel.jsp");
+		CrewModel obj=new CrewModel();
+		obj.setUname(name);
+		obj.setEmail(email);
+		obj.setDob(dob);
+		obj.setPwd(password);
+		obj.setContact(contact);
+		
+		String sql="update crewd set username=?,email=?,dob=?,password=?,contact=? where email=?";
+		 
+		IBMDAO obj1=new IBMDAO();
+		String msg=obj1.UpdateCrew(obj, sql,email);
+		if(msg.equals("success"))
+		{
+			response.sendRedirect("CrewUpdate.jsp");
+		}
+		else
+		{
+			response.sendRedirect("CrewUpdate.jsp?error=fail to update record");	
+		}
 	}
 
 }

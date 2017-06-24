@@ -60,6 +60,37 @@ function myFunction9()
     window.location="CrewShow.jsp";
 	
 }
+function myFunction10() 
+{
+    window.location="RecruitUpdate.jsp";
+	
+}
+function myFunction11() 
+{
+    window.location="TrainerUpdate.jsp";
+	
+}
+function myFunction12() 
+{
+    window.location="CrewUpdate.jsp";
+	
+}
+function myFunction13() 
+{
+    window.location="RecruitSearch.jsp";
+	
+}
+function myFunction14() 
+{
+    window.location="TrainerSearch.jsp";
+	
+}
+function myFunction15() 
+{
+    window.location="CrewSearch.jsp";
+	
+}
+
 
 
 </script>
@@ -94,6 +125,18 @@ response.sendRedirect("Home.jsp");
 <td><button style="height:30px;width:200px" type="button" onclick="myFunction7()">SHOW HR RECRUITER</button></td>
 <td><button style="height:30px;width:200px" type="button" onclick="myFunction8()">SHOW HR TRAINEE</button></td>
 <td><button style="height:30px;width:200px" type="button" onclick="myFunction9()">SHOW CREW MEMBER</button></td>
+</tr>
+
+<tr>
+<td><button style="height:30px;width:200px" type="button" onclick="myFunction10()">UPDATE HR RECRUITER</button></td>
+<td><button style="height:30px;width:200px" type="button" onclick="myFunction11()">UPDATE HR TRAINEE</button></td>
+<td><button style="height:30px;width:200px" type="button" onclick="myFunction12()">UPDATE CREW MEMBER</button></td>
+</tr>
+
+<tr>
+<td><button style="height:30px;width:200px" type="button" onclick="myFunction13()">SEARCH HR RECRUITER</button></td>
+<td><button style="height:30px;width:200px" type="button" onclick="myFunction14()">SEARCH HR TRAINEE</button></td>
+<td><button style="height:30px;width:200px" type="button" onclick="myFunction15()">SEARCH CREW MEMBER</button></td>
 </tr>
 
 </table>

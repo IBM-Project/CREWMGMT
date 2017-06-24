@@ -20,6 +20,14 @@ function displaycrew()
 {
     window.location="CrewShow.jsp";
 }
+function updatecrew() 
+{
+    window.location="CrewUpdate.jsp";
+}
+function searchcrew() 
+{
+    window.location="CrewSearch.jsp";
+}
 </script>
 </head>
 <body>
@@ -38,6 +46,8 @@ response.sendRedirect("Home.jsp");
 <button type="button" onclick="addcrew()">ADD CREW MEMBER</button>
 <button type="button" onclick="deletecrew()">DELETE CREW MEMBER</button>
 <button type="button" onclick="displaycrew()">DISPLAY CREW MEMBER</button>
+<button type="button" onclick="updatecrew()">UPDATE CREW MEMBER</button>
+<button type="button" onclick="searchcrew()">SEARCH CREW MEMBER</button>
 <br>
 <br>
 <a href="Logout.jsp">Click Here To Logout</a>
