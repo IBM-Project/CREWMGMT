@@ -14,7 +14,7 @@ function addtraining()
 }
 function deletetraining() 
 {
-    window.location="TrainerDel.jsp";
+    window.location="TrainingEnd.jsp";
 }
 function displaytraining() 
 {
@@ -24,7 +24,7 @@ function displaytraining()
 </head>
 <body>
 <%
-if(session.getAttribute("usersession")==null) 
+if(session.getAttribute("trainersession")==null) 
 {
 
 response.sendRedirect("Home.jsp");
@@ -34,8 +34,9 @@ response.sendRedirect("Home.jsp");
 %>
 <center>
 <h1>WELCOME HR TRAINER</h1>
+<h2>Welcome  <%out.println(session.getAttribute("trainersession"));  %></h2>
 <button type="button" onclick="addtraining()">ADD TRAINING</button>
-<button type="button" onclick="deletetraining()">DELETE TRAINING</button>
+<button type="button" onclick="deletetraining()">End Training</button>
 <button type="button" onclick="displaytraining()">DISPLAY TRAINING</button>
 </center>
 

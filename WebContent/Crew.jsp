@@ -10,7 +10,7 @@
 <script>
 function addtrain() 
 {
-    window.location="xyz.jsp";
+    window.location="Addtraining.jsp";
 }
 
 function viewtrain() 
@@ -25,6 +25,7 @@ if(session.getAttribute("crewsession")==null)
 
 response.sendRedirect("Home.jsp");
 }
+
 
 
 %>

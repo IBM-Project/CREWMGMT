@@ -21,7 +21,7 @@ public class IBMDAO {
 	public static String drivername="com.mysql.jdbc.Driver"; //com.ibm.db2.jcc.DB2Driver
 	public static String url="jdbc:mysql://localhost:3306/crew";
 	public static String username="root";
-	public static String pas1="natasha"; //password changed
+	public static String pas1="2358"; //password changed
 	static Connection con=null;
 	public ResultSet rs=null;
 	
@@ -381,6 +381,22 @@ public ResultSet Featchdetails(String sql)
 	return rs;
 }
 
+public ResultSet Fetchdetails2(String sql,String Training)
+{
+	try
+	{
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setString(1, Training);
+		rs = ps.executeQuery();
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+	
+	
+	return rs;
+}
 
 
 	
@@ -588,6 +604,203 @@ public String UpdateCrew(CrewModel obj,String sql,String email){
 	}
 	
 	return "";
+}
+
+
+
+public String UpdateRecruit(RecruitModel obj,String sql,String email){
+	
+	
+	try
+	{
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setString(1,obj.getName());
+		ps.setString(2,obj.getEmail());
+		ps.setString(3,obj.getDob());
+		ps.setString(4,obj.getQualification());
+		ps.setString(5,obj.getContact());
+		ps.setString(6,obj.getPassword());
+		int i=ps.executeUpdate();
+		if(i==1)
+		{
+			return "success";
+		}
+		else
+		{
+			return "fail";
+		}
+		
+		
+	}
+	catch(Exception e)
+	{
+		
+		e.printStackTrace();
+	}
+	
+	return "";
+}
+
+public String CheckFlag(String sql,String email){
+	
+	
+	try
+	{
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setString(1,email);
+		//System.out.println("checkFlag");
+		rs=ps.executeQuery();
+		if(rs.next())
+		{   
+			int i=Integer.parseInt(rs.getString(7));
+			
+			if(i==0)
+			{
+			System.out.println("checkflag1");	
+			return "success";
+			}
+			
+			else
+			{    System.out.println("checkflag2");
+				return "flag";
+			}
+			
+		}
+		else
+		{   System.out.println("checkflag3");
+			return"fail";
+		}
+		
+		
+	}
+	catch(Exception e)
+	{
+		
+		e.printStackTrace();
+	}
+	
+	return "";
+}
+
+public String AddTraining(String sql,String Training,String email){
+	
+	
+	try
+	{    System.out.println("update executed");
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setString(1,Training);
+		ps.setString(2,"1");
+		ps.setString(3,email);
+		
+		int i=ps.executeUpdate();
+		if(i==1)
+		{  
+			return "success";
+		}
+		else
+		{
+			return "fail";
+		}
+		
+		
+	}
+	catch(Exception e)
+	{
+		
+		e.printStackTrace();
+	}
+	
+	return "";
+}
+
+public String UpdateTraining(String sql,String Crew,String Training)
+{
+	try
+	{
+		
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setString(1,Crew);
+		ps.setString(2,Training);
+	
+		int i=ps.executeUpdate();
+		if(i==1)
+		{  
+			return "success";
+		}
+		else
+		{
+			return "fail";
+		}
+		
+		
+	}catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+	
+	
+	return "";
+	
+}
+
+
+public String UpdateCrew1(String sql,String Training1,String Flag,String Training)
+{
+	try
+	{
+		
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setString(1,Training1);
+		ps.setString(2,Flag);
+		ps.setString(3,Training);
+		int i=ps.executeUpdate();
+		if(i==1)
+		{  
+			return "success";
+		}
+		else
+		{
+			return "fail";
+		}
+		
+		
+	}catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+	
+	
+	return "";
+	
+}
+
+
+public String deleteTraining(String sql,String Training)
+{
+	try
+	{
+		
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setString(1,Training);
+		int i=ps.executeUpdate();
+		if(i==1)
+		{  
+			return "success";
+		}
+		else
+		{
+			return "fail";
+		}
+		
+		
+	}catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+	
+	
+	return "";
+	
 }
 
 

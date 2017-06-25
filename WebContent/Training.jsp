@@ -15,6 +15,7 @@ function back()
 </script>
 </head>
 <body>
+<% 
 if(session.getAttribute("usersession")==null && session.getAttribute("trainersession")==null) 
 {
 
