@@ -83,3 +83,14 @@ ADD COLUMN `photo` VARCHAR(45) NULL DEFAULT NULL AFTER `password`;
 
 ALTER TABLE `crew`.`trainer` 
 ADD COLUMN `photo` VARCHAR(45) NULL DEFAULT NULL AFTER `password`;
+
+
+ALTER TABLE `crew`.`crewd` 
+CHANGE COLUMN `Flag` `Flag` VARCHAR(45) CHARACTER SET 'utf8' COLLATE 'utf8_bin' NULL DEFAULT 0 ;
+
+
+
+ALTER TABLE `crew`.`comp_training` 
+ADD COLUMN `id` INT NOT NULL AUTO_INCREMENT FIRST,
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (`id`, `crew`, `training`);

@@ -25,10 +25,28 @@ if(session.getAttribute("crewsession")==null)
 
 response.sendRedirect("Home.jsp");
 }
-
-
-
 %>
+
+
+
+<% 
+try{
+String sql="select * from comp_training where crew=? order by id DESC";
+IBMDAO obj=new IBMDAO();
+String crew1=(String)session.getAttribute("crewsession");
+ResultSet rs = obj.Fetchdetails5(sql,crew1);
+rs.next();
+String test=rs.getString(3);
+
+out.println(session.getAttribute("crewsession")+" your "+test+ " training has been completed");
+
+}
+catch(Exception e)
+{
+	e.printStackTrace();
+}
+%>
+
 
 <body>
 <h1>Successfully Logged In To Crew Page</h1>
