@@ -21,7 +21,7 @@ public class IBMDAO {
 	public static String drivername="com.mysql.jdbc.Driver"; //com.ibm.db2.jcc.DB2Driver
 	public static String url="jdbc:mysql://localhost:3306/crew";
 	public static String username="root";
-	public static String pas1="natasha"; //password changed
+	public static String pas1="2358"; //password changed
 	static Connection con=null;
 	public ResultSet rs=null;
 	
@@ -589,6 +589,42 @@ public String UpdateCrew(CrewModel obj,String sql,String email){
 	
 	return "";
 }
+
+
+
+public String UpdateRecruit(RecruitModel obj,String sql,String email){
+	
+	
+	try
+	{
+		PreparedStatement ps=con.prepareStatement(sql);
+		ps.setString(1,obj.getName());
+		ps.setString(2,obj.getEmail());
+		ps.setString(3,obj.getDob());
+		ps.setString(4,obj.getQualification());
+		ps.setString(5,obj.getContact());
+		ps.setString(6,obj.getPassword());
+		int i=ps.executeUpdate();
+		if(i==1)
+		{
+			return "success";
+		}
+		else
+		{
+			return "fail";
+		}
+		
+		
+	}
+	catch(Exception e)
+	{
+		
+		e.printStackTrace();
+	}
+	
+	return "";
+}
+
 
 
 }
