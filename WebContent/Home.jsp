@@ -36,6 +36,7 @@ System.out.println(dateFormat.format(date));
 String currdate = (String) dateFormat.format(date);
 
 SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+SimpleDateFormat format2 = new SimpleDateFormat("yyyy-MM-dd");
 Date currdate1 = format.parse(currdate);
 System.out.println(currdate1);
 
@@ -44,7 +45,7 @@ IBMDAO obj=new IBMDAO();
 ResultSet rs = obj.Featchdetails(sql);
 while(rs.next())
 {
-    Date tabledate = format.parse(rs.getString(5));
+    Date tabledate = format2.parse(rs.getString(5));
     if (currdate1.compareTo(tabledate) >= 0) {
     	String sql2 = "select * from crewd where Training=?";
         String training = rs.getString(2);
@@ -56,11 +57,13 @@ while(rs.next())
     		String msg1=obj.UpdateTraining(sql3, crew, Training);
     	}
         
-        String sql4=("update crewd set Training=?,Flag=? where Training=?");
+        String sql4="update crewd set Training=?,Flag=? where Training=?";
 		String msg2=obj.UpdateCrew1(sql4,null,"0",training);
 		
 		String sql5="delete from training where training_name=?";
 		String msg3=obj.deleteTraining(sql5,training);
+		
+        System.out.println("Training over "+training);
 	}
 
 }
