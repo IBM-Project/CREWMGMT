@@ -35,8 +35,9 @@ Date date = new Date();
 System.out.println(dateFormat.format(date)); 
 String currdate = (String) dateFormat.format(date);
 
-SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 Date currdate1 = format.parse(currdate);
+System.out.println(currdate1);
 
 String sql = "select * from training";
 IBMDAO obj=new IBMDAO();
