@@ -2,6 +2,8 @@
     pageEncoding="ISO-8859-1"%>
 <%@ page import="com.admin.user.Dao.*" %>    
 <%@ page import="java.sql.*" %>
+<%@ page import="java.text.*" %>
+<%@ page import="java.util.Date" %>
 
 <!doctype html>
 <html>
@@ -25,6 +27,42 @@ if(session.getAttribute("usersession")!=null || session.getAttribute("recruitses
 
 }
 
+%>
+
+<% 
+DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+Date date = new Date();
+System.out.println(dateFormat.format(date)); 
+String currdate = (String) dateFormat.format(date);
+
+SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+Date currdate1 = format.parse(currdate);
+
+String sql = "select * from training";
+IBMDAO obj=new IBMDAO();
+ResultSet rs = obj.Featchdetails(sql);
+while(rs.next())
+{
+    Date tabledate = format.parse(rs.getString(5));
+    if (currdate1.compareTo(tabledate) >= 0) {
+    	String sql2 = "select * from crewd where Training=?";
+        String training = rs.getString(2);
+    	ResultSet rs2 = obj.Fetchdetails2(sql2,training);
+        while(rs2.next()){
+        	String sql3="insert into comp_training(crew,training)values(?,?)";
+    		String crew =rs2.getString(3);
+    		String Training=rs.getString(2);
+    		String msg1=obj.UpdateTraining(sql3, crew, Training);
+    	}
+        
+        String sql4=("update crewd set Training=?,Flag=? where Training=?");
+		String msg2=obj.UpdateCrew1(sql4,null,"0",training);
+		
+		String sql5="delete from training where training_name=?";
+		String msg3=obj.deleteTraining(sql5,training);
+	}
+
+}
 %>
 
 

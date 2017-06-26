@@ -39,7 +39,7 @@ public class AddTrainingServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		IBMDAO obj=new IBMDAO();
-		 HttpSession session=request.getSession();
+		HttpSession session=request.getSession();
 		String Training =	request.getParameter("rid");
 		String Crew=(String) session.getAttribute("crewsession");
 		//System.out.println("crew"+Crew);
