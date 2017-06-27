@@ -29,7 +29,9 @@ if(session.getAttribute("usersession")!=null || session.getAttribute("recruitses
 
 %>
 
+    
 <% 
+try{
 DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 Date date = new Date();
 System.out.println(dateFormat.format(date)); 
@@ -67,7 +69,12 @@ while(rs.next())
 	}
 
 }
+}catch(Exception e)
+{
+	e.printStackTrace();
+}
 %>
+
 
 
 <center>
@@ -91,7 +98,7 @@ while(rs.next())
     </tr>
   
     <tr>
-      <td>Username</td>
+      <td >Username</td>
       <td><input type="text" name= "username"></td>
     </tr>
     <tr>
@@ -103,6 +110,7 @@ while(rs.next())
 	  <td>		</td>
       <td><input type="submit" value= "Login"></td>
     </tr>
+    
   </tbody>
 </table>
 </form>
