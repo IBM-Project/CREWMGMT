@@ -21,7 +21,7 @@ public class IBMDAO {
 	public static String drivername="com.mysql.jdbc.Driver"; //com.ibm.db2.jcc.DB2Driver
 	public static String url="jdbc:mysql://localhost:3306/crew";
 	public static String username="root";
-	public static String pas1="2358"; //password changed
+	public static String pas1="vpkhb"; //password changed
 	static Connection con=null;
 	public ResultSet rs=null;
 	

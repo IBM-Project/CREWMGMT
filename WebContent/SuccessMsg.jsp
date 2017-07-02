@@ -12,6 +12,6 @@
   }, 2500); // <-- this is the delay in milliseconds
 </script>
 <body>
-<h1>Data Added Successfully. Redirecting To Administrator Page Shortly ...</h1>
+<h1>Data Added Successfully. Redirecting Back Shortly ...</h1>
 </body>
 </html>

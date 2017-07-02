@@ -108,7 +108,7 @@ public class CrewRecruitServlet extends HttpServlet {
 		obj.setContact(contact);
 		obj.setQualification(qualification);
 		obj.setPic(Filename);
-		String sql = "insert into recruit(name,email,dob,qualification,contact,password,photor)values(?,?,?,?,?,?,?)";
+		String sql = "insert into recruit(name,email,dob,qualification,contact,password,photo)values(?,?,?,?,?,?,?)";
 		
 		IBMDAO obj1 = new IBMDAO();
 		String msg = obj1.insertRecruit(obj, sql);

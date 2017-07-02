@@ -5,14 +5,25 @@
 <%@ page import="java.text.*" %>
 <%@ page import="java.util.Date" %>
 
-<!doctype html>
+
+<!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Home</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crew Management - Login</title>
+    <!-- Core CSS - Include with every page -->
+    <link href="assets/plugins/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
+   <link href="assets/css/style.css" rel="stylesheet" />
+      <link href="assets/css/main-style.css" rel="stylesheet" />
+
 </head>
 
-<body>
+<body class="body-Login-back">
+
 <%
 if(session.getAttribute("usersession")!=null || session.getAttribute("recruitsession")!=null || session.getAttribute("trainersession")!=null || session.getAttribute("crewsession")!=null)
 {
@@ -76,44 +87,54 @@ while(rs.next())
 %>
 
 
+    <div class="container">
+       
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 text-center logo-margin ">
+              <img src="assets/img/logo.png" alt=""/>
+                </div>
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">                  
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Please Sign In To Continue</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="post" action="Servlet_home">
+                            <fieldset>
+                                <div class="form-group">
+                                      <select name="user" class="form-control">
+										  <option value="1" class="form-control">Admin</option>
+										  <option value="2" class="form-control">HR Recruiter</option>
+										  <option value="3" class="form-control">HR Trainer</option>
+										  <option value="4" class="form-control">Crew</option>
+									   </select>
 
-<center>
-<h1>Crew Management</h1>
-<form method="post" action="Servlet_home">
-<table border="0">
-  <tbody>
-    <tr>
-	<td>
-	Select
-	</td>
-      <td>
-  <select name="user">
-  <option value="1">Admin</option>
-  <option value="2">HR Recruiter</option>
-  <option value="3">HR Trainer</option>
-  <option value="4">Crew</option>
-</select>
+                                </div>                                
+								<div class="form-group">
+                                    <input class="form-control" placeholder="E-mail" name= "username" type="email" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                    </label>
+                                </div>
+                                <input type="submit" class="btn btn-lg btn-success btn-block" value="Login">
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-</td>
-    </tr>
-  
-    <tr>
-      <td >Username</td>
-      <td><input type="text" name= "username"></td>
-    </tr>
-    <tr>
-      <td>Password</td>
-      <td><input type="password" name= "password"></td>
-    </tr>
-    
-    <tr>
-	  <td>		</td>
-      <td><input type="submit" value= "Login"></td>
-    </tr>
-    
-  </tbody>
-</table>
-</form>
-</center>
+     <!-- Core Scripts - Include with every page -->
+    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/plugins/metisMenu/jquery.metisMenu.js"></script>
+
 </body>
+
 </html>
